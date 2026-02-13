@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-left">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="header-right">
+          <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-bell"></i>
+          <span class="notify1">8</span>
+          <i class="fa-solid fa-comments"></i>
+          <span class="notify2">2</span>
+          <i class="fa-solid fa-maximize"></i>
+        </div>
+      </header>
+
+      <aside>
+        <div class="profile">
+          <div class="profile-pic">
+            <img src="./img/user (2).png" alt="" />
+          </div>
+          <h2 class="profile-name">Admin</h2>
+        </div>
+        <div class="nav-links">
+          <div class="nav-sub">
+            <i class="fa-solid fa-house"></i>
+            <a href="./index.html" class="nav-sub-name">Dashboard</a>
+          </div>
+          <div class="nav-sub">
+            <i class="fa-solid fa-list"></i>
+            <a href="./category.html" class="nav-sub-name">Category</a>
+          </div>
+          <div class="nav-sub">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <a href="./product.html" class="nav-sub-name">Products</a>
+          </div>
+          <div class="nav-sub">
+            <i class="fa-regular fa-address-card"></i>
+            <a href="./registration.html" class="nav-sub-name">Registration</a>
+          </div>
+          <div class="nav-sub">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <a href="#" class="nav-sub-name" onclick="logOut()">Logout</a>
+          </div>
+        </div>
+        <div class="profile-icons">
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+        </div>
+      </aside>
+
+      <main class="wrapper">
+        <!-- <div class="wrapper"> -->
+        <div class="form-box">
+          <form action="" class="form-new">
+            <h2>Products</h2>
+            <div class="form-card-signup">
+              <div class="form-input">
+                <label for="img-url">Image URL</label>
+                <input type="text" id="img-url" placeholder="Enter Image URL" />
+                <span id="urlError" class="error"></span>
+              </div>
+
+              <div class="form-input">
+                <label for="prod-img">Product Image</label>
+                <input
+                  type="url"
+                  id="prod-img"
+                  placeholder="Enter Product Image"
+                />
+                <span id="prodError" class="error"></span>
+              </div>
+
+              <div class="form-input">
+                <label for="category">Category</label>
+                <input type="text" id="category" placeholder="Enter Category" />
+                <span id="categoryError" class="error"></span>
+              </div>
+
+              <div class="form-input">
+                <label for="price">Price</label>
+                <input type="number" id="price" placeholder="Enter Price" />
+                <span id="priceError" class="error"></span>
+              </div>
+
+              <div class="form-input">
+                <label for="stock">Stock</label>
+                <input type="number" id="stock" placeholder="Enter Stock" />
+                <span id="stockError" class="error"></span>
+              </div>
+
+              <div class="form-input">
+                <label for="offer">Offer</label>
+                <input
+                  type="number"
+                  id="offer"
+                  placeholder="Enter Offer Price"
+                />
+                <span id="offerError" class="error"></span>
+              </div>
+            </div>
+            <button type="submit" onclick="regForm()">Register</button>
+          </form>
+        </div>
+        
+
+        <!-- table -->
+         <table class="prod-table">
+          <thead>
+            <tr>
+              <th>SNo</th>
+              <th>Image URL</th>
+              <th>Product Image</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Offer</th>
+              
+            </tr>
+            </thead>
+            <tbody id="prodTable">
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+          
+        </table>
+      </main>
+
+      <footer>
+        <p>
+          © 2026 <span class="cpy-right">Admin Panel</span>. All rights
+          reserved.
+        </p>
+      </footer>
+    </div>
+
+    <script src="script/product.js"></script>
+    <script src="script/logout.js"></script>
+  </body>
+</html>
