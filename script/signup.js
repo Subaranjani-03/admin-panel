@@ -110,9 +110,8 @@ let regList = JSON.parse(localStorage.getItem("regList")) || [];
         }
 
         if (isCheck){
-          alert('Registered Successfully!')
 
-        
+        alert('Registered Successfully!')
 
         // object
         let regData = {
@@ -128,12 +127,12 @@ let regList = JSON.parse(localStorage.getItem("regList")) || [];
         //store array to local storage
         localStorage.setItem('regList',JSON.stringify(regList))
         
-      
-
         loadData()
+
 
          //redirecting to signin page
         window.location.href = 'signin.html'
+        
       }
       //preventDefault()
       let submit_btn = document.querySelector('form')

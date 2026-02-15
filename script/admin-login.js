@@ -1,41 +1,40 @@
 // signin function
-      let loginForm = () => {
+      let adminLogin = () => {
         // debugger
         //getting input value
-        let email = document.getElementById("email")
+        let uname = document.getElementById("uname")
         let password = document.getElementById("password")
         
 
         //getting span id
-        let emailErr = document.getElementById("emailErr");
+        let unameErr = document.getElementById("unameErr");
         let passwordErr = document.getElementById("passwordErr");
       
-
-        let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
         //error validations
         let isCheck = true
 
-        if (email.value === "") {
-          emailErr.innerText = "Must Fill This Field !";
-          email.style.border = '2px solid red'
+        if (uname.value === "") {
+          unameErr.innerText = "Must Fill This Field !";
+          uname.style.border = '2px solid red'
           isCheck = false
-        } 
-        else if(!emailPattern.test(email.value)){
-          emailErr.innerText = "Enter a valid email address!";
-          email.style.border = "2px solid red";
-          isCheck = false;
-        }else {
-          emailErr.innerText = "";
-          email.style.border = ''
+        } else if(uname.value !== 'admin'){
+          unameErr.innerText = "Invalid User Name";
+          uname.style.border = '2px solid red'
+          isCheck = false
+        }
+        else {
+          unameErr.innerText = "";
+          uname.style.border = ''
         }
 
         if (password.value === "") {
           passwordErr.innerText = "Must Fill This Field !";
           password.style.border = '2px solid red'
           isCheck = false
-        } else if(password.value.length < 8){
-          passwordErr.innerText = "Maximum 8 Characters !";
+        } 
+         else if(password.value !== 'admin'){
+          passwordErr.innerText = "Incorrect Password";
           password.style.border = '2px solid red'
           isCheck = false
         } else {
@@ -45,8 +44,9 @@
 
         if (isCheck){
           // alert('Logged In Successfully!')
+          // window.location.href = 'index.html'
 
-        Swal.fire({
+          Swal.fire({
             icon: "success",
             title: "Login Successful",
             timer: 1500,
@@ -56,14 +56,14 @@
         setTimeout(() => {
             window.location.href = 'index.html'
         }, 1500);
-        
         }
 
-        //preventDefault()        
-        let submit_btn = document.querySelector('form')
+        
+    };
+    
+    //preventDefault()        
+    let submit_btn = document.querySelector('form')
 
-              submit_btn.addEventListener('submit',(e) =>{
-                e.preventDefault()
-              })
-
-      };
+          submit_btn.addEventListener('submit',(e) =>{
+            e.preventDefault()
+          })

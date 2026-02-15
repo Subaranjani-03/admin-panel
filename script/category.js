@@ -19,7 +19,17 @@ let categoryTable = () =>{
         }
 
          if (isCheck){
-          alert('Category Submitted!')
+          // alert('Category Submitted!')
+
+          //sweetalert
+          // Swal.fire("Category Added!");
+
+          Swal.fire({
+              icon: "success",
+              title: "Category Added!",
+              text: "New category has been created."
+          });
+
 
         // object
         let regData = {
